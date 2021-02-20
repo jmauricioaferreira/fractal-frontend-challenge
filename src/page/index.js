@@ -10,6 +10,7 @@ import {
   AppBar,
   Typography,
 } from '@material-ui/core';
+import PolygonMap from '../components/Map/Polygon';
 
 const drawerWidth = 240;
 
@@ -38,6 +39,13 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
   toolbarHead: {},
+  toolbar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar,
+  },
 }));
 
 const AppPage = () => {
@@ -71,6 +79,10 @@ const AppPage = () => {
           </List>
         </div>
       </Drawer>
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        <PolygonMap />
+      </main>
     </div>
   );
 };
