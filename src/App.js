@@ -1,6 +1,11 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import AppPage from './page';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import {
+  unstable_createMuiStrictModeTheme as createMuiTheme,
+  ThemeProvider,
+} from '@material-ui/core';
+import AppRoutes from './routes';
 
 function App() {
   const theme = createMuiTheme({
@@ -14,9 +19,11 @@ function App() {
     },
   });
   return (
-    <ThemeProvider theme={theme}>
-      <AppPage />
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <AppPage />
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 

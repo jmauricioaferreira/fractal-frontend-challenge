@@ -1,16 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Drawer,
-  List,
-  Toolbar,
-  ListItem,
-  ListItemText,
-  ListItemIcon,
-  AppBar,
-  Typography,
-} from '@material-ui/core';
-import PolygonMap from '../components/Map/Polygon';
+import { Drawer, Toolbar, AppBar, Typography } from '@material-ui/core';
+import PolygonMap from '../components/MapStructure/PolygonMap';
+import AccordionSidebar from '../components/Accordion';
+import Header from '../components/Header';
+
+import AppRoutes from '../routes';
 
 const drawerWidth = 240;
 
@@ -18,10 +13,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    boxShadow: 'none',
-  },
+  appBar: {},
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -30,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
   },
   drawerContainer: {
-    overflow: 'auto',
+    overflow: 'hidden',
     backgroundColor: theme.palette.secondary.main,
     height: '100vh',
   },
@@ -53,13 +45,7 @@ const AppPage = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar className={classes.toolbarHead}>
-          <Typography variant="h6" noWrap>
-            Fractal
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <Header />
       <Drawer
         className={classes.drawer}
         variant="permanent"
@@ -69,19 +55,12 @@ const AppPage = () => {
       >
         <Toolbar />
         <div className={classes.drawerContainer}>
-          <List>
-            {['Gráficos', 'Mapas'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>aa</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
+          <AccordionSidebar />
         </div>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <PolygonMap />
+        <AppRoutes />
       </main>
     </div>
   );
