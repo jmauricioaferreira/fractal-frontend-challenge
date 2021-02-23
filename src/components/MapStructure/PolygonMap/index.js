@@ -17,7 +17,7 @@ const PolygonMap = () => {
         center={center}
         zoom={11}
         scrollWheelZoom={true}
-        style={{ height: '500px' }}
+        style={{ height: '600px' }}
       >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/  copyright">OpenStreetMap</a> contributors'
