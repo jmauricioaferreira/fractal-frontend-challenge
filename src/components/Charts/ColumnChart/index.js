@@ -32,8 +32,6 @@ const ColumnChart = ({ data }) => {
     ],
   };
 
-  console.log(options.series.data);
-
   return (
     <div>
       <HighchartsReact highcharts={Highcharts} options={options} />

@@ -65,14 +65,16 @@ const AccordionSidebar = () => {
         </AccordionSummary>
         <AccordionDetails className={classes.accordionDetails}>
           <List className={classes.accordionList}>
-            <Link to="/graficos/chuva">
+            <Link to="/graficos/coluna">
               <ListItem>
-                <Typography>Chuva</Typography>
+                <Typography>Coluna</Typography>
               </ListItem>
             </Link>
-            <ListItem>
-              <Typography>Chuva</Typography>
-            </ListItem>
+            <Link to="/graficos/linha">
+              <ListItem>
+                <Typography>Linha</Typography>
+              </ListItem>
+            </Link>
           </List>
         </AccordionDetails>
       </Accordion>

@@ -12,7 +12,8 @@ const AppRoutes = () => {
       <Route path="/mapas/poligono" element={<PolygonMap />} />
       <Route path="/mapas/linhas" element={<LinesMap />} />
       <Route path="/mapas/pontos" element={<DotsMap />} />
-      <Route path="/graficos/chuva" element={<Charts />} />
+      <Route path="/graficos/coluna" element={<Charts />} />
+      <Route path="/graficos/linha" element={<Charts />} />
     </Routes>
   );
 };
